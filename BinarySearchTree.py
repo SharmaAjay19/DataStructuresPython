@@ -1,9 +1,13 @@
 class BST:
 	def __init__(self, value):
+		if type(value) not in [int, float]:
+			raise Exception("Please provide correct data type")
 		self.val = value
 		self.left = None
 		self.right = None
 	def insert(self, value):
+		if type(value) not in [int, float]:
+			raise Exception("Please provide correct data type")
 		if value <= self.val:
 			if self.left:
 				self.left.insert(value)
@@ -15,6 +19,8 @@ class BST:
 			else:
 				self.right = BST(value)
 	def search(self, value):
+		if type(value) not in [int, float]:
+			raise Exception("Please provide correct data type")
 		if self.val == value:
 			return True
 		elif self.val < value:
