@@ -4,11 +4,11 @@ class Queue:
 		self.elements = []
 		self.size = 0
 	def enqueue(self, element):
-		if self.size == self.capacity:
-			raise(Exception("Queue is Full"))
-		else:
+		if self.size < self.capacity:
 			self.elements.append(element)
 			self.size += 1
+		else:
+			raise(Exception("Queue is Full"))
 	def dequeue(self):
 		x = self.elements[0]
 		del self.elements[0]
@@ -16,7 +16,7 @@ class Queue:
 		return x
 	def print_queue(self):
 		print(self.elements)
-	def isEmpty():
+	def isEmpty(self):
 		if self.size==0:
 			return True
 		else:
