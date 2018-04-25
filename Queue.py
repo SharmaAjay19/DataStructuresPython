@@ -16,3 +16,8 @@ class Queue:
 		return x
 	def print_queue(self):
 		print(self.elements)
+	def isEmpty():
+		if self.size==0:
+			return True
+		else:
+			return False
