@@ -11,11 +11,11 @@ class GraphHelpers:
 		return False
 	def detectCycle(self, graph, vertex):
 		visitedStatus = [False for i in range(graph.size)]
-		results = []
 		visitedStatus[vertex] = True
 		for v in graph.adjacencyList[vertex]:
-			results.append(self.DFS(graph, visitedStatus, v, vertex))
-		return True if True in results else False
+			if self.DFS(graph, visitedStatus, v, vertex):
+				return True
+		return False
 
 
 g = Graph(10)
@@ -28,6 +28,6 @@ g.addEdge(3, 6)
 g.addEdge(4, 7)
 g.addEdge(7, 8)
 g.addEdge(5, 9)
-g.addEdge(8, 9)
+#g.addEdge(8, 9)
 #print(g.adjacencyList)
 print(GraphHelpers().detectCycle(g, 9))
