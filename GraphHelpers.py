@@ -2,7 +2,7 @@ from Graph import Graph
 class GraphHelpers:
 	def DFS(self, graph, visitedStatus, vertex, parent):
 		visitedStatus[vertex] = True
-		for v in graph.adjacencyList[vertex]:
+		for v, w in graph.adjacencyList[vertex]:
 			if visitedStatus[v]:
 				if not (v==parent):
 					return True
@@ -12,7 +12,7 @@ class GraphHelpers:
 	def detectCycle(self, graph, vertex):
 		visitedStatus = [False for i in range(graph.size)]
 		visitedStatus[vertex] = True
-		for v in graph.adjacencyList[vertex]:
+		for v, w in graph.adjacencyList[vertex]:
 			if self.DFS(graph, visitedStatus, v, vertex):
 				return True
 		return False
